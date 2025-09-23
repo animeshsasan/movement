@@ -1,0 +1,12 @@
+[
+  {
+    "name": "dev",
+    "version": "dev",
+    "url": "https://animeshsasan.github.io/movement/dev"
+  },
+  {
+    "name": "v1.0.0 (latest)",
+    "version": "v1.0.0",
+    "url": "https://animeshsasan.github.io/movement/latest"
+  }
+]
