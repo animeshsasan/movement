@@ -134,6 +134,7 @@ def from_file(
         ``movement`` dataset containing the pose tracks, confidence scores,
         and associated metadata.
 
+
     See Also
     --------
     movement.io.load_poses.from_dlc_file
@@ -285,9 +286,9 @@ def from_sleap_file(
 
     References
     ----------
-    .. [1] https://sleap.ai/tutorials/analysis.html
+    .. [1] https://docs.sleap.ai/latest/learnings/export-analysis/
     .. [2] https://github.com/talmolab/sleap/blob/v1.3.3/sleap/info/write_tracking_h5.py#L59
-    .. [3] https://sleap.ai/guides/proofreading.html
+    .. [3] https://docs.sleap.ai/latest/guides/tracking-and-proofreading/
 
     Examples
     --------
@@ -369,6 +370,15 @@ def from_dlc_file(
     --------
     >>> from movement.io import load_poses
     >>> ds = load_poses.from_dlc_file("path/to/file.h5", fps=30)
+
+    Notes
+    -----
+    In ``movement``, pose data can only be loaded if all individuals have
+    the same set of keypoints (i.e., the same labeled body parts).
+    While DeepLabCut supports assigning keypoints that are not shared across
+    individuals (see the `DeepLabCut documentation for multi-animal projects
+    <https://deeplabcut.github.io/DeepLabCut/docs/maDLC_UserGuide.html#b-configure-the-project>`_),
+    this feature is not currently supported in ``movement``.
 
     """
     return _ds_from_lp_or_dlc_file(
